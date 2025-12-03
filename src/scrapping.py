@@ -33,7 +33,7 @@ video_ids = [
 ]
 
 MAX_COMMENTS_PER_VIDEO = 100
-OUTPUT_FILENAME = "data/raw_dataset_whoosh.csv"
+OUTPUT_FILENAME = "../data/raw_dataset_whoosh.csv"
 
 def get_video_title(video_id: str) -> str:
     try:
@@ -66,7 +66,7 @@ def get_video_comments(video_id: str, video_title: str, max_comments: int):
     print(f"  -> Mengambil komentar (maks: {max_comments})...")
 
     while len(comments) < max_comments:
-        request_count = min(100, max_comments - len(comments))  # maxResults ≤ 100
+        request_count = min(100, max_comments - len(comments))
 
         try:
             response = youtube.commentThreads().list(
@@ -182,11 +182,6 @@ def scrape_comments_from_videos(video_ids, output_filename: str):
     save_comments_to_csv(all_comments, output_filename)
 
     return all_comments
-
-
-# =============================================================================
-# MAIN
-# =============================================================================
 
 if __name__ == "__main__":
     comments = scrape_comments_from_videos(video_ids, OUTPUT_FILENAME)
