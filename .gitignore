@@ -1,0 +1,34 @@
+# Jupyter Checkpoints
+.ipynb_checkpoints/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# HuggingFace Tokenizer cache
+tokenizer.json
+*.lock
+
+# Model besar (JANGAN di-push)
+models/
+models/*
+models/**
+
+# Tokenized dataset
+data/indobert_tokenized/
+
+# Raw dataset besar
+data/raw_*.csv
+
+# Checkpoints (biasanya sangat besar)
+checkpoint-*/
+**/checkpoint-*/
+
+# Colab cache
+*.ckpt
+*.bin
+*.safetensors
+*.pt
