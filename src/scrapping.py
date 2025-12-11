@@ -32,7 +32,7 @@ video_ids = [
     'Su2ZvF0EJDI'
 ]
 
-MAX_COMMENTS_PER_VIDEO = 200
+MAX_COMMENTS_PER_VIDEO = 100
 OUTPUT_FILENAME = "../data/raw_dataset_whoosh.csv"
 
 def get_video_title(video_id: str) -> str:
